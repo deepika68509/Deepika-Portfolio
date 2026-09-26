@@ -11,38 +11,42 @@ export type Project = {
 export const projects: Project[] = [
   {
     number: "01",
+    title: "Opti-Blink",
+    category: "ASSISTIVE COMPUTER VISION",
+    stack: "MEDIAPIPE · OPENCV · NLP · PYTHON",
+    description: "A hands-free communication system that transforms intentional eye blinks into Morse-code text, speech, and emergency signals.",
+    github: "https://github.com/ameen90913/OptiBlink",
+    demo: "https://optiblink.vercel.app/",
+},
+
+{
+    number: "02",
     title: "DocuQuery AI",
     category: "DOCUMENT INTELLIGENCE",
     stack: "RAG · LLM · EMBEDDINGS · CHROMADB",
     description: "A grounded question-answering system that turns dense documents into an explorable knowledge surface.",
-    github: "https://github.com/",
-    demo: "https://example.com/",
-  },
-  {
-    number: "02",
-    title: "Customer Churn Prediction",
-    category: "PREDICTIVE ANALYTICS",
-    stack: "CLASSIFICATION · FEATURE ENGINEERING · SCIKIT-LEARN",
-    description: "An interpretable pipeline for finding the signals behind customer retention and risk.",
-    github: "https://github.com/",
+    github: "https://github.com/deepika68509/Smart-document-analyzer-RAG-",
     demo: "https://example.com/",
   },
   {
     number: "03",
-    title: "cXpify",
-    category: "MACHINE LEARNING",
-    stack: "LIGHTGBM · PURCHASE PREDICTION · DATA PIPELINE",
-    description: "A purchase prediction workflow designed to make behavioral data actionable for teams.",
-    github: "https://github.com/",
-    demo: "https://example.com/",
-  },
-  {
+    title: "AI Data Scientist",
+    category: "AGENTIC DATA SCIENCE",
+    stack: "LANGCHAIN · MCP · FASTAPI · XGBOOST",
+    description: "An autonomous data science workspace that turns raw datasets into models, evaluations, visual insights, and natural-language analysis.",
+    github: "https://github.com/deepika68509/AI-Data-Scientist",
+    demo: "YOUR_DEMO_URL"
+},
+{
     number: "04",
-    title: "TRAVELIT",
-    category: "PRODUCT EXPERIENCE",
-    stack: "REACT · APIS · TRIP PLANNING · AR",
-    description: "A considered travel companion bringing planning, expenses and place discovery together.",
-    github: "https://github.com/",
-    demo: "https://example.com/",
-  },
+    title: "Cold-Email Generator",
+    category: "LLM · AUTOMATION",
+    stack: "LANGCHAIN · VECTOR DB · WEB SCRAPING · STREAMLIT",
+    description: "An AI outreach engine that understands job requirements, retrieves relevant portfolio context, and generates personalized cold emails.",
+    github: "https://github.com/deepika68509/Cold-Email-Generator",
+    demo: "YOUR_DEMO_URL"
+},
+
+  
+  
 ];
