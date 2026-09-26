@@ -1,4 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Deepika S Portfolio
+
+An editorial portfolio for AI/ML engineering, data science, web development, and creative development. The experience combines a warm ivory visual system with interactive Three.js gravitational bodies and role-aware keyword transitions.
+
+## Stack
+
+- Next.js App Router
+- React 19 and TypeScript
+- Three.js, React Three Fiber, and Drei
+- GSAP and Framer Motion
+- Tailwind CSS and Lucide React
+
+## Getting Started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Scripts
+
+```bash
+npm run dev     # Start local development
+npm run lint    # Run ESLint
+npm run build   # Create a production build
+npm run start   # Serve the production build
+```
+
+## Routes
+
+- `/` — interactive portfolio homepage and gravitational hero
+- `/about` — editorial About page
+
+## Project Structure
+
+```text
+app/             Next.js routes, metadata, and global styles
+components/      Portfolio sections and Three.js scenes
+lib/             Project and skill data
+```
+
+## Deployment
+
+The project can be deployed to Vercel or any platform that supports Next.js. Build it with `npm run build` and serve it with `npm run start`.
+
+Replace the placeholder GitHub, LinkedIn, demo, and email links in `components/Portfolio.tsx` and `lib/projects.ts` before publishing.
 
 ## Getting Started
 
