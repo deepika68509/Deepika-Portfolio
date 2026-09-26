@@ -22,7 +22,7 @@ export default function ConnectSection() {
   return (
     <section className="connect-section" aria-labelledby="connect-title">
       <div className="connect-heading">
-        <p className="eyebrow">06 — CONNECT</p>
+        <p className="eyebrow">08 — CONNECT</p>
         <h2 id="connect-title">LET&apos;S <em>CONNECT.</em></h2>
       </div>
       <div className="connect-grid">
