@@ -7,9 +7,10 @@ import { useEffect, useState } from "react";
 import { projects } from "@/lib/projects";
 import { skillGroups } from "@/lib/skills";
 import ConnectSection from "@/components/ConnectSection";
+import { siLangchain, siPandas, siPlotly, siPython, siReact, siThreedotjs } from "simple-icons";
+import type { SimpleIcon } from "simple-icons";
 
 const HeroVisualization = dynamic(() => import("@/components/HeroVisualization"), { ssr: false });
-const ProjectUniverse = dynamic(() => import("@/components/ProjectUniverse"), { ssr: false });
 
 const navItems = [
   { label: "WORK", href: "#work" },
@@ -24,10 +25,21 @@ const heroRoles = [
   { key: "web" as const, label: "a Web Developer" },
   { key: "creative" as const, label: "a Creative Developer" },
 ];
+const services = [
+  { number: "01", title: "AI / ML SYSTEMS", copy: "Intelligent tools and practical machine-learning workflows built around real problems.", icon: siPython },
+  { number: "02", title: "DATA SCIENCE", copy: "Exploration, modelling and clear insights from complex or messy datasets.", icon: siPandas },
+  { number: "03", title: "RAG & LLM APPS", copy: "Grounded language experiences that connect useful information to thoughtful interfaces.", icon: siLangchain },
+  { number: "04", title: "WEB DEVELOPMENT", copy: "Fast, accessible and considered web products built from idea to deployment.", icon: siReact },
+  { number: "05", title: "CREATIVE DEVELOPMENT", copy: "Interactive digital experiences combining code, motion, 3D and visual direction.", icon: siThreedotjs },
+  { number: "06", title: "DATA VISUALIZATION", copy: "Visual systems that make patterns, decisions and technical stories easier to understand.", icon: siPlotly },
+];
+
+function ServiceLogo({ icon }: { icon: SimpleIcon }) {
+  return <svg className="service-logo" viewBox="0 0 24 24" aria-hidden="true"><path d={icon.path} /></svg>;
+}
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeProject, setActiveProject] = useState(-1);
   const [loaded, setLoaded] = useState(false);
   const [roleIndex, setRoleIndex] = useState(0);
   const [roleText, setRoleText] = useState(heroRoles[0].label);
@@ -98,14 +110,19 @@ export default function Portfolio() {
           <p className="eyebrow">02 — ABOUT</p><div className="about-content"><h2>ABOUT<br />ME<span>.</span></h2><div className="about-text"><p>Computer Science engineer focused on AI/ML, data science and modern web development. I enjoy going from messy data and a blank screen to something useful, measurable and beautiful.</p><span className="mono-note">A PRACTICAL MIND<br />WITH A VISUAL EDGE</span><a className="about-link" href="/about">ABOUT ME <ArrowUpRight size={17} /></a></div></div>
         </motion.section>
 
-        <section className="work section" id="work">
-          <div className="section-heading"><div><p className="eyebrow">03 — SELECTED WORK</p><h2>SELECTED<br />WORK<span>.</span></h2></div><p className="section-note">A selection of projects across AI/ML,<br />data science and software engineering.</p></div>
-          <div className="work-layout"><div className="project-list">{projects.map((project, index) => <motion.article key={project.number} className={`project-row ${activeProject === index ? "is-active" : ""}`} onMouseEnter={() => setActiveProject(index)} onMouseLeave={() => setActiveProject(-1)} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: index * 0.07 }}><span className="project-number">{project.number}</span><div className="project-info"><h3>{project.title}</h3><p>{project.stack}</p><small>{project.category}</small></div><div className="project-description">{project.description}</div><div className="project-links"><a href={project.github} target="_blank" rel="noreferrer" aria-label={`${project.title} GitHub`}><span>GH</span><ArrowUpRight size={16} /></a><a href={project.demo} target="_blank" rel="noreferrer" aria-label={`${project.title} live demo`}><span>LIVE</span><ArrowUpRight size={16} /></a></div><ArrowUpRight className="project-arrow" size={28} /></motion.article>)}</div><ProjectUniverse active={activeProject} /></div>
+        <section className="services section" id="services">
+          <div className="section-heading services-heading"><div><p className="eyebrow">03 — SERVICES</p><h2>WHAT I<br />BUILD<span>.</span></h2></div><p className="section-note">A flexible set of capabilities for intelligent products, useful systems and expressive digital experiences.</p></div>
+          <div className="services-grid">{services.map((service, index) => <motion.article className="service-card" key={service.number} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ delay: index * 0.06 }}><div className="service-card-top"><span>{service.number}</span><a className="service-arrow" href="#contact" aria-label={`Contact me about ${service.title}`}><ArrowUpRight size={20} /></a></div><div className="service-card-content"><ServiceLogo icon={service.icon} /><h3>{service.title}</h3><p>{service.copy}</p></div></motion.article>)}</div>
         </section>
 
-        <section className="stack section-dark" id="stack"><div className="stack-inner"><p className="eyebrow eyebrow-light">04 — THE STACK</p><div className="stack-heading"><h2>THE<br />STACK<span>.</span></h2><p>The tools I use to turn ideas into intelligent, production-ready experiences.</p></div><div className="skill-groups">{skillGroups.map((group) => <div className="skill-group" key={group.label}><h3>{group.label}</h3><div className="skill-tags">{group.items.map((skill) => <span className={featuredSkills.has(skill) ? "featured" : ""} key={skill}>{skill}</span>)}</div></div>)}</div><div className="stats"><div><strong>AI</strong><span>INTELLIGENT SYSTEMS</span></div><div><strong>ML</strong><span>PREDICTIVE MODELS</span></div><div><strong>WEB</strong><span>PRODUCT EXPERIENCES</span></div></div><div className="skill-map"><div className="map-center">AI</div><span className="map-node map-ml">ML</span><span className="map-node map-data">DATA</span><span className="map-node map-llm">LLMs</span><span className="map-node map-web">WEB</span><i className="map-line line-one" /><i className="map-line line-two" /><i className="map-line line-three" /><i className="map-line line-four" /></div></div></section>
+        <section className="work section" id="work">
+          <div className="section-heading"><div><p className="eyebrow">04 — SELECTED WORK</p><h2>SELECTED<br />WORK<span>.</span></h2></div><div className="work-heading-actions"><p className="section-note">A selection of projects across AI/ML,<br />data science and software engineering.</p><a className="works-button" href="https://github.com/deepika68509/" target="_blank" rel="noreferrer">EXPLORE WORKS <ArrowUpRight size={17} /></a></div></div>
+          <div className="work-cards">{projects.slice(0, 3).map((project, index) => <motion.article key={project.number} className="project-card" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: index * 0.08 }}><div className="project-card-top"><span className="project-number">{project.number}</span><span className="project-category">{project.category}</span></div><div><h3>{project.title}</h3><p>{project.description}</p></div><div className="project-card-bottom"><span>{project.stack}</span><div className="project-links"><a href={project.github} target="_blank" rel="noreferrer" aria-label={`${project.title} GitHub`}>GH <ArrowUpRight size={15} /></a><a href={project.demo} target="_blank" rel="noreferrer" aria-label={`${project.title} live demo`}>LIVE <ArrowUpRight size={15} /></a></div></div></motion.article>)}</div>
+        </section>
 
-        <section className="contact section" id="contact"><p className="eyebrow">05 — LET&apos;S BUILD</p><div className="contact-heading"><h2>HAVE A<br /><em>PROJECT?</em></h2><ArrowUpRight size={70} strokeWidth={1} /></div><a className="email" href="mailto:hello@example.com">hello@example.com <ArrowUpRight size={32} /></a><div className="contact-footer"><a href="mailto:hello@example.com">DOWNLOAD RESUME <Download size={16} /></a><div><a href="https://github.com/" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://linkedin.com/" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div></div></section>
+        <section className="stack section-dark" id="stack"><div className="stack-inner"><p className="eyebrow eyebrow-light">05 — THE STACK</p><div className="stack-heading"><h2>THE<br />STACK<span>.</span></h2><p>The tools I use to turn ideas into intelligent, production-ready experiences.</p></div><div className="skill-groups">{skillGroups.map((group) => <div className="skill-group" key={group.label}><h3>{group.label}</h3><div className="skill-tags">{group.items.map((skill) => <span className={featuredSkills.has(skill) ? "featured" : ""} key={skill}>{skill}</span>)}</div></div>)}</div><div className="stats"><div><strong>AI</strong><span>INTELLIGENT SYSTEMS</span></div><div><strong>ML</strong><span>PREDICTIVE MODELS</span></div><div><strong>WEB</strong><span>PRODUCT EXPERIENCES</span></div></div><div className="skill-map"><div className="map-center">AI</div><span className="map-node map-ml">ML</span><span className="map-node map-data">DATA</span><span className="map-node map-llm">LLMs</span><span className="map-node map-web">WEB</span><i className="map-line line-one" /><i className="map-line line-two" /><i className="map-line line-three" /><i className="map-line line-four" /></div></div></section>
+
+        <section className="contact section" id="contact"><p className="eyebrow">06 — LET&apos;S BUILD</p><div className="contact-heading"><h2>HAVE A<br /><em>PROJECT?</em></h2><ArrowUpRight size={70} strokeWidth={1} /></div><a className="email" href="mailto:hello@example.com">hello@example.com <ArrowUpRight size={32} /></a><div className="contact-footer"><a href="mailto:hello@example.com">DOWNLOAD RESUME <Download size={16} /></a><div><a href="https://github.com/" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://linkedin.com/" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div></div></section>
       </main>
       <ConnectSection />
       <footer><span>© 2026 Deepika S</span><span>AI · ML · DATA · WEB</span></footer>
