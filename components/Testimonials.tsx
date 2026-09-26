@@ -27,7 +27,7 @@ export default function Testimonials() {
         <div className="testimonial-layout">
           <div className="testimonial-video-wrap">
             <video className="testimonial-video" controls playsInline preload="metadata">
-              <source src="/assets/josh%27s%20testimonial.mp4" type="video/mp4" />
+              <source src="/assets/josh-testimonial.mp4" type="video/mp4" />
               Your browser does not support the testimonial video.
             </video>
             <span className="testimonial-video-label">VIDEO TESTIMONIAL / JOSH</span>

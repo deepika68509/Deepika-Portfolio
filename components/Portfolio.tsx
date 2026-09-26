@@ -8,6 +8,7 @@ import { projects } from "@/lib/projects";
 import { skillGroups } from "@/lib/skills";
 import ConnectSection from "@/components/ConnectSection";
 import Testimonials from "@/components/Testimonials";
+import SiteFooter from "@/components/SiteFooter";
 import { siLangchain, siPandas, siPlotly, siPython, siReact, siThreedotjs } from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 
@@ -126,7 +127,7 @@ export default function Portfolio() {
         <section className="contact section" id="contact"><p className="eyebrow">07 — LET&apos;S BUILD</p><div className="contact-heading"><h2>HAVE A<br /><em>PROJECT?</em></h2><ArrowUpRight size={70} strokeWidth={1} /></div><form className="contact-form" onSubmit={handleContactSubmit}><div className="contact-form-grid"><label><span>NAME</span><input name="name" type="text" placeholder="Your name" required /></label><label><span>EMAIL</span><input name="email" type="email" placeholder="you@example.com" required /></label></div><label><span>PROJECT DETAILS</span><textarea name="message" rows={4} placeholder="Tell me what you are building" required /></label><button className="contact-submit" type="submit">SEND MESSAGE <ArrowUpRight size={17} /></button></form></section>
       </main>
       <ConnectSection />
-      <footer><span>© 2026 Deepika S</span><span>AI · ML · DATA · WEB</span></footer>
+      <SiteFooter />
     </>
   );
 }
