@@ -6,6 +6,7 @@ import { ArrowDownRight, ArrowUpRight, Download, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { projects } from "@/lib/projects";
 import { skillGroups } from "@/lib/skills";
+import ConnectSection from "@/components/ConnectSection";
 
 const HeroVisualization = dynamic(() => import("@/components/HeroVisualization"), { ssr: false });
 const ProjectUniverse = dynamic(() => import("@/components/ProjectUniverse"), { ssr: false });
@@ -106,6 +107,7 @@ export default function Portfolio() {
 
         <section className="contact section" id="contact"><p className="eyebrow">05 — LET&apos;S BUILD</p><div className="contact-heading"><h2>HAVE A<br /><em>PROJECT?</em></h2><ArrowUpRight size={70} strokeWidth={1} /></div><a className="email" href="mailto:hello@example.com">hello@example.com <ArrowUpRight size={32} /></a><div className="contact-footer"><a href="mailto:hello@example.com">DOWNLOAD RESUME <Download size={16} /></a><div><a href="https://github.com/" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://linkedin.com/" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div></div></section>
       </main>
+      <ConnectSection />
       <footer><span>© 2026 Deepika S</span><span>AI · ML · DATA · WEB</span></footer>
     </>
   );

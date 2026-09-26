@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import ConnectSection from "@/components/ConnectSection";
 
 const navItems = [
   { label: "WORK", href: "/#work" },
@@ -50,7 +51,7 @@ export default function AboutPage() {
 
         <section className="about-next page-band"><p className="eyebrow">NEXT / 04</p><div className="next-grid"><h2>SEE THE<br /><em>WORK.</em></h2><Link href="/#work" className="next-link">SELECTED PROJECTS <ArrowUpRight size={26} /></Link></div></section>
       </main>
-
+      <ConnectSection />
       <footer><span>© 2026 Deepika S</span><span>AI · ML · DATA · WEB</span></footer>
     </>
   );
