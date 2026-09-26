@@ -1,16 +1,14 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowDownRight, ArrowUpRight, Download, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { projects } from "@/lib/projects";
 import { skillGroups } from "@/lib/skills";
 import ConnectSection from "@/components/ConnectSection";
+import Testimonials from "@/components/Testimonials";
 import { siLangchain, siPandas, siPlotly, siPython, siReact, siThreedotjs } from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
-
-const HeroVisualization = dynamic(() => import("@/components/HeroVisualization"), { ssr: false });
 
 const navItems = [
   { label: "WORK", href: "#work" },
@@ -44,20 +42,11 @@ export default function Portfolio() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [roleText, setRoleText] = useState(heroRoles[0].label);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [contactSent, setContactSent] = useState(false);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setLoaded(true), 650);
-    let cleanup = () => {};
-    import("gsap").then(({ default: gsap }) => {
-      import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-        gsap.registerPlugin(ScrollTrigger);
-        const network = document.querySelector(".webgl-hero");
-        if (!network) return;
-        const tween = gsap.to(network, { y: 110, scale: 0.76, opacity: 0.42, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1.2 } });
-        cleanup = () => { tween.kill(); ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); };
-      });
-    });
-    return () => { window.clearTimeout(timer); cleanup(); };
+    return () => window.clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -100,7 +89,6 @@ export default function Portfolio() {
               <div className="hero-actions"><a className="text-action" href="#work">EXPLORE WORK <ArrowDownRight size={18} /></a><a className="text-action" href="#contact">DOWNLOAD RESUME <Download size={16} /></a></div>
             </div>
           </div>
-          <HeroVisualization role={heroRoles[roleIndex].key} />
           <span className="scroll-note">SCROLL TO EXPLORE <ArrowDownRight size={15} /></span>
         </section>
 
@@ -120,9 +108,11 @@ export default function Portfolio() {
           <div className="work-cards">{projects.slice(0, 3).map((project, index) => <motion.article key={project.number} className="project-card" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }} transition={{ delay: index * 0.08 }}><div className="project-card-top"><span className="project-number">{project.number}</span><span className="project-category">{project.category}</span></div><div><h3>{project.title}</h3><p>{project.description}</p></div><div className="project-card-bottom"><span>{project.stack}</span><div className="project-links"><a href={project.github} target="_blank" rel="noreferrer" aria-label={`${project.title} GitHub`}>GH <ArrowUpRight size={15} /></a><a href={project.demo} target="_blank" rel="noreferrer" aria-label={`${project.title} live demo`}>LIVE <ArrowUpRight size={15} /></a></div></div></motion.article>)}</div>
         </section>
 
-        <section className="stack section-dark" id="stack"><div className="stack-inner"><p className="eyebrow eyebrow-light">05 — THE STACK</p><div className="stack-heading"><h2>THE<br />STACK<span>.</span></h2><p>The tools I use to turn ideas into intelligent, production-ready experiences.</p></div><div className="skill-groups">{skillGroups.map((group) => <div className="skill-group" key={group.label}><h3>{group.label}</h3><div className="skill-tags">{group.items.map((skill) => <span className={featuredSkills.has(skill) ? "featured" : ""} key={skill}>{skill}</span>)}</div></div>)}</div><div className="stats"><div><strong>AI</strong><span>INTELLIGENT SYSTEMS</span></div><div><strong>ML</strong><span>PREDICTIVE MODELS</span></div><div><strong>WEB</strong><span>PRODUCT EXPERIENCES</span></div></div><div className="skill-map"><div className="map-center">AI</div><span className="map-node map-ml">ML</span><span className="map-node map-data">DATA</span><span className="map-node map-llm">LLMs</span><span className="map-node map-web">WEB</span><i className="map-line line-one" /><i className="map-line line-two" /><i className="map-line line-three" /><i className="map-line line-four" /></div></div></section>
+        <section className="stack section-dark" id="stack"><div className="stack-inner"><p className="eyebrow eyebrow-light">05 — THE STACK</p><div className="stack-heading"><h2>THE<br />STACK<span>.</span></h2><p>The tools I use to turn ideas into intelligent, production-ready experiences.</p></div><div className="skill-groups">{skillGroups.map((group) => <div className="skill-group" key={group.label}><h3>{group.label}</h3><div className="skill-tags">{group.items.map((skill) => <span className={featuredSkills.has(skill) ? "featured" : ""} key={skill}>{skill}</span>)}</div></div>)}</div><div className="stats"><div><strong>AI</strong><span>INTELLIGENT SYSTEMS</span></div><div><strong>ML</strong><span>PREDICTIVE MODELS</span></div><div><strong>WEB</strong><span>PRODUCT EXPERIENCES</span></div></div></div></section>
 
-        <section className="contact section" id="contact"><p className="eyebrow">06 — LET&apos;S BUILD</p><div className="contact-heading"><h2>HAVE A<br /><em>PROJECT?</em></h2><ArrowUpRight size={70} strokeWidth={1} /></div><a className="email" href="mailto:hello@example.com">hello@example.com <ArrowUpRight size={32} /></a><div className="contact-footer"><a href="mailto:hello@example.com">DOWNLOAD RESUME <Download size={16} /></a><div><a href="https://github.com/" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://linkedin.com/" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div></div></section>
+        <Testimonials />
+
+        <section className="contact section" id="contact"><p className="eyebrow">07 — LET&apos;S BUILD</p><div className="contact-heading"><h2>HAVE A<br /><em>PROJECT?</em></h2><ArrowUpRight size={70} strokeWidth={1} /></div><form className="contact-form" onSubmit={(event) => { event.preventDefault(); setContactSent(true); }}><div className="contact-form-grid"><label><span>NAME</span><input name="name" type="text" placeholder="Your name" required /></label><label><span>EMAIL</span><input name="email" type="email" placeholder="you@example.com" required /></label></div><label><span>WHAT ARE YOU BUILDING?</span><textarea name="message" placeholder="Tell me a little about the project" rows={4} required /></label><div className="contact-form-actions"><button type="submit">{contactSent ? "MESSAGE READY" : "SEND MESSAGE"} <ArrowUpRight size={17} /></button><span>{contactSent ? "Thanks — I&apos;ll be in touch." : "I usually reply within a few working days."}</span></div></form><a className="email" href="mailto:hello@example.com">hello@example.com <ArrowUpRight size={32} /></a><div className="contact-footer"><a href="mailto:hello@example.com">DOWNLOAD RESUME <Download size={16} /></a><div><a href="https://github.com/" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://linkedin.com/" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div></div></section>
       </main>
       <ConnectSection />
       <footer><span>© 2026 Deepika S</span><span>AI · ML · DATA · WEB</span></footer>
