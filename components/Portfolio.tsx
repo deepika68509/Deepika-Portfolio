@@ -95,7 +95,7 @@ export default function Portfolio() {
           <div className="hero-grid" />
           <div className="hero-copy">
             <p className="eyebrow">01 — AI / ML ENGINEER · DATA · WEB</p>
-            <h1 id="hero-title" className="hero-intro">I&apos;m Deepika,<br /><em className="hero-role" aria-live="polite">{roleText}<span className="reveal-cursor" aria-hidden="true" /></em></h1>
+            <h1 id="hero-title" className="hero-intro">I&apos;M DEEPIKA,<br /><em className="hero-role" aria-live="polite">{roleText}<span className="reveal-cursor" aria-hidden="true" /></em></h1>
             <div className="hero-bottom">
               <p className="intro">I design and build intelligent, modern and interactive digital experiences.</p>
               <div className="hero-actions"><a className="text-action" href="#work">EXPLORE WORK <ArrowDownRight size={18} /></a><a className="text-action" href="#contact">DOWNLOAD RESUME <Download size={16} /></a></div>
