@@ -10,8 +10,8 @@ import SiteFooter from "@/components/SiteFooter";
 const navItems = [
   { label: "ABOUT", href: "/about" },
   { label: "SERVICES", href: "/#services" },
-  { label: "WORK", href: "/#work" },
-  { label: "BLOG", href: "/#blog" },
+  { label: "WORK", href: "/works" },
+  { label: "BLOG", href: "/blog" },
   { label: "CONTACT", href: "/#contact" },
 ];
 

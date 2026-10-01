@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import { siGithub, siInstagram, siLeetcode, siWhatsapp } from "simple-icons";
+import { siGithub, siGmail, siInstagram, siLeetcode } from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 import type { CSSProperties } from "react";
 
@@ -10,7 +10,7 @@ const links = [
   { label: "GitHub", href: "https://github.com/deepika68509/", icon: siGithub, tone: "ink" },
   { label: "LeetCode", href: "https://leetcode.com/u/Deepika68509/", icon: siLeetcode, tone: "lime" },
   { label: "Instagram", href: "https://www.instagram.com/_deepika__s___?stkn=MWp2OWh3cnp3YW1z", icon: siInstagram, tone: "blue" },
-  { label: "WhatsApp", href: "https://wa.me/", icon: siWhatsapp, tone: "lime" },
+  { label: "Gmail", href: "mailto:deepika.shantappa@gmail.com", icon: siGmail, tone: "lime" },
 ];
 
 function BrandLogo({ icon, mark }: { icon?: SimpleIcon; mark?: string }) {

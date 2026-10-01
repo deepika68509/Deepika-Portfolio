@@ -3,9 +3,9 @@ import { ArrowUpRight } from "lucide-react";
 
 const footerLinks = [
   { label: "ABOUT", href: "/about" },
-  { label: "WORK", href: "/#work" },
+  { label: "WORK", href: "/works" },
   { label: "STACK", href: "/#stack" },
-  { label: "BLOG", href: "/#blog" },
+  { label: "BLOG", href: "/blog" },
 ];
 
 export default function SiteFooter() {
@@ -16,7 +16,7 @@ export default function SiteFooter() {
         <div className="brand-column">
           <Link href="/" className="footer-brand" aria-label="Deepika S home">DS<span>.</span></Link>
           <p className="footer-statement"><strong>AI · ML · SOFTWARE</strong>Building useful things<br />with thoughtful technology.</p>
-          <Link href="/#work" className="footer-cta">EXPLORE THE WORK <ArrowUpRight size={17} /></Link>
+          <Link href="/works" className="footer-cta">EXPLORE THE WORK <ArrowUpRight size={17} /></Link>
         </div>
         <nav className="links-column" aria-label="Footer navigation">
           <h2>OTHER LINKS</h2>
