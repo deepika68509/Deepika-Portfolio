@@ -67,7 +67,7 @@ export default function WorksPage() {
       <main className="works-page">
         <section className="works-intro">
           <p className="eyebrow">03 — WORK</p>
-          <div className="works-intro-grid"><h1>WORKS<span>.</span></h1><p>A collection of things I&apos;ve built across artificial intelligence, machine learning, data, web development, and e-commerce.</p></div>
+          <div className="works-intro-grid"><h1>PROJECTS<span>.</span></h1><p>A collection of things I&apos;ve built across artificial intelligence, machine learning, data, web development, and e-commerce.</p></div>
         </section>
         <section className="works-archive" aria-label="Project archive">
           <div className="works-tabs" role="tablist" aria-label="Project categories">
