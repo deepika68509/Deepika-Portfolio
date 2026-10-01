@@ -229,7 +229,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 .stack-tabs { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #494743; border-bottom: 1px solid #494743; }
 .stack-tab { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; min-height: 105px; padding: 20px 22px; border: 0; border-right: 1px solid #494743; background: transparent; color: #77736c; cursor: pointer; text-align: left; transition: background .3s, color .3s; }
 .stack-tab:last-child { border-right: 0; }.stack-tab strong { font: 800 28px Arial, sans-serif; letter-spacing: -.08em; }.stack-tab span { max-width: 190px; font: 10px "Courier New", monospace; line-height: 1.35; letter-spacing: .04em; }.stack-tab:hover, .stack-tab.is-active { background: var(--ivory); color: var(--ink); }.stack-tab.is-active span { color: #69655e; }
-.skill-groups { margin-top: 52px; }.skill-group { transition: opacity .35s, transform .35s; }.skill-group.is-muted { opacity: .35; transform: translateX(8px); }.skill-group h3 { font-size: 11px; }.skill-tags span { border-radius: 999px; padding: 11px 14px; font-size: 14px; }
+.skill-groups { margin-top: 52px; }.skill-group { transition: opacity .35s, transform .35s; }.skill-group.is-muted { opacity: 1; transform: translateX(8px); }.skill-group h3 { font-size: 11px; }.skill-tags span { border-radius: 999px; padding: 11px 14px; font-size: 14px; }
 .testimonials { padding-top: clamp(100px, 11vw, 165px); }.testimonial-layout { margin-top: clamp(65px, 8vw, 110px); }.testimonial-item p { max-width: 560px; font-size: clamp(24px, 2vw, 28px); line-height: 1.12; letter-spacing: -.045em; }.testimonial-item footer strong { font-size: 14px; }.testimonial-item footer span { font-size: 11px; }
 .contact { padding-top: clamp(100px, 12vw, 180px); }.contact-form input, .contact-form textarea { font-size: 17px; }.contact-submit { font-size: 11px; }
 @media (max-width: 1100px) and (min-width: 801px) { .project-card { min-height: 590px; padding: 22px; }.project-preview { margin-inline: -22px; }.service-card { min-height: 245px; }.hero h1 { font-size: clamp(4.5rem, 8.4vw, 7rem); } }
@@ -248,7 +248,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 	.stack-tabs { grid-template-columns: repeat(3, 1fr); }
 	.stack-tab { min-height: 92px; padding: 15px 12px; }.stack-tab strong { font-size: 22px; }.stack-tab span { font-size: 8px; }
 	.skill-groups { margin-top: 38px; }
-	.skill-group.is-muted { opacity: .22; transform: none; }
+	.skill-group.is-muted { opacity: 1; transform: none; }
 	.testimonial-item p { font-size: 1.5rem; }
 	.contact { padding-top: 110px; }
 }
