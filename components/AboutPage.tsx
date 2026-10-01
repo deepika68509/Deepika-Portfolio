@@ -8,16 +8,24 @@ import ConnectSection from "@/components/ConnectSection";
 import SiteFooter from "@/components/SiteFooter";
 
 const navItems = [
-  { label: "WORK", href: "/#work" },
-  { label: "STACK", href: "/#stack" },
   { label: "ABOUT", href: "/about" },
+  { label: "SERVICES", href: "/#services" },
+  { label: "WORK", href: "/#work" },
+  { label: "BLOG", href: "/#blog" },
   { label: "CONTACT", href: "/#contact" },
 ];
 
 const stackSections = [
-  { label: "INTELLIGENCE", note: "Systems that learn, retrieve and reason.", items: ["Python", "Machine Learning", "PyTorch", "LLMs", "RAG", "LangChain"] },
-  { label: "DATA", note: "From raw signals to useful decisions.", items: ["Pandas", "NumPy", "SQL", "EDA", "Feature Engineering", "Scikit-learn"] },
-  { label: "EXPERIENCE", note: "Interfaces that make complex things clear.", items: ["React", "Next.js", "TypeScript", "FastAPI", "Three.js", "GSAP"] },
+  { label: "AI / ML", items: ["Python", "PyTorch", "TensorFlow", "Scikit-learn", "LangChain", "LLMs", "RAG", "NLP", "Computer Vision"] },
+  { label: "DATA", items: ["NumPy", "Pandas", "SQL", "EDA", "Feature Engineering", "Vector Databases"] },
+  { label: "WEB", items: ["React", "Next.js", "TypeScript", "JavaScript", "Node.js", "Tailwind CSS", "REST APIs"] },
+  { label: "TOOLS", items: ["Git", "GitHub", "Docker", "FastAPI", "Streamlit", "Figma", "Postman"] },
+];
+
+const principles = [
+  { number: "01", title: "UNDERSTAND FIRST", copy: "Good products start with understanding the problem, not jumping straight to the solution." },
+  { number: "02", title: "KEEP IT USEFUL", copy: "I care about making things that are clear, practical and genuinely useful to the person using them." },
+  { number: "03", title: "MAKE IT FEEL RIGHT", copy: "Function matters, but so does the experience. I like technology that works well and feels considered." },
 ];
 
 export default function AboutPage() {
@@ -34,23 +42,30 @@ export default function AboutPage() {
       </header>
 
       <main className="about-page">
-        <section className="about-intro page-band">
-          <p className="eyebrow">ABOUT / 01</p>
-          <div className="about-intro-grid">
-            <h1>I&apos;m Deepika<span>.</span></h1>
-            <div className="about-lede"><p>AI/ML engineer, data scientist and creative developer building intelligent things with a human edge.</p><Link className="text-action" href="/#contact">LET&apos;S BUILD <ArrowUpRight size={17} /></Link></div>
+        <section className="about-intro about-editorial-band">
+          <p className="eyebrow">ABOUT / 01 — INTRODUCTION</p>
+          <div className="about-intro-grid about-editorial-grid">
+            <h1>I&apos;M<br />DEEPIKA<span>.</span></h1>
+            <div className="about-lede"><p>AI/ML engineer, data scientist and creative developer building intelligent things with a human edge.</p><p>I&apos;m a Computer Science Engineer building at the intersection of AI, data and the web. I enjoy taking complicated problems and turning them into things that feel simple, useful and thoughtfully made.</p></div>
           </div>
-          <div className="about-mark" aria-hidden="true">DS<span>.</span></div>
         </section>
 
-        <motion.section className="about-story page-band" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}>
-          <p className="eyebrow">INTRO / 02</p>
-          <div className="story-grid"><h2>CURIOUS<br /><em>BY DEFAULT.</em></h2><div className="story-copy"><p>I work at the meeting point of data, software and visual communication. That can mean training a model, shaping a clean data pipeline, or turning a complex idea into an interface that feels obvious.</p><p>I care about the whole journey: the question behind the dataset, the person on the other side of the product, and the details that make technology feel considered.</p><span className="mono-note">MODEL → PRODUCT → EXPERIENCE</span></div></div>
+        <motion.section className="about-build about-editorial-band" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}>
+          <p className="eyebrow">ABOUT / 02 — HOW I BUILD</p>
+          <div className="about-build-grid about-editorial-grid"><div><h2>CURIOUS<br /><em>BY DEFAULT.</em></h2></div><div className="about-build-copy"><p>I like figuring things out. I don&apos;t need to know everything before I start — I learn, experiment, build and keep moving.</p></div></div>
+          <div className="principles-list">{principles.map((principle, index) => <motion.div className="principle-row" key={principle.number} initial={{ opacity: 0, x: -18 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: index * 0.08 }}><span>{principle.number}</span><strong>{principle.title}</strong><p>{principle.copy}</p></motion.div>)}</div>
         </motion.section>
 
-        <section className="about-stack page-band"><p className="eyebrow">MY STACK / 03</p><div className="about-section-heading"><h2>TOOLS FOR<br /><em>THINKING.</em></h2><p>My stack moves between intelligent systems and expressive interfaces. The tool matters less than what it helps make possible.</p></div><div className="about-stack-list">{stackSections.map((section, index) => <motion.div className="about-stack-row" key={section.label} initial={{ opacity: 0, x: -18 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: index * 0.08 }}><span className="about-stack-number">0{index + 1}</span><div><h3>{section.label}</h3><p>{section.note}</p></div><div className="about-tags">{section.items.map((item) => <span key={item}>{item}</span>)}</div></motion.div>)}</div></section>
+        <section className="about-stack about-editorial-band">
+          <p className="eyebrow eyebrow-light">ABOUT / 03 — TECH STACK</p>
+          <div className="about-section-heading about-editorial-grid"><h2>TOOLS FOR<br /><em>THINKING.</em></h2><p>I use whatever helps solve the problem well — from intelligent systems to the interfaces people interact with.</p></div>
+          <div className="about-stack-list">{stackSections.map((section, index) => <motion.div className="about-stack-row" key={section.label} initial={{ opacity: 0, x: -18 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: index * 0.08 }}><span className="about-stack-number">0{index + 1}</span><h3>{section.label}</h3><div className="about-tags">{section.items.map((item) => <span key={item}>{item}</span>)}</div></motion.div>)}</div>
+        </section>
 
-        <section className="about-next page-band"><p className="eyebrow">NEXT / 04</p><div className="next-grid"><h2>SEE THE<br /><em>WORK.</em></h2><Link href="/#work" className="next-link">SELECTED PROJECTS <ArrowUpRight size={26} /></Link></div></section>
+        <motion.section className="about-personal about-editorial-band" initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}>
+          <p className="eyebrow">ABOUT / 04 — A LITTLE MORE ABOUT ME</p>
+          <div className="about-personal-grid about-editorial-grid"><h2>OUTSIDE<br /><em>THE CODE.</em></h2><div className="about-personal-copy"><p>I&apos;m an optimist, a heavy Spotify listener, a fiction reader and someone who can disappear down a rabbit hole about <mark>space</mark> or <mark>geography</mark>.</p><p>I love <mark>science-fiction</mark> stories, journaling and ideas that make me look at the world differently.</p><p>I&apos;m ambitious, curious and very much a get-it-done person. If I don&apos;t know how to do something yet, I&apos;ll figure it out.</p></div></div>
+        </motion.section>
       </main>
       <ConnectSection />
       <SiteFooter />
