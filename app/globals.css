@@ -374,3 +374,40 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 	.site-nav .nav-links a { font-size: 15px; }
 	.site-nav .brand { font-size: 24px; }
 }
+
+/* Footer: centered three-column editorial layout. */
+.site-footer { padding: 0; background: var(--ink); color: var(--ivory); }
+.footer-inner { width: min(1200px, calc(100% - 120px)); margin-left: auto; margin-right: auto; }
+.footer-columns { display: grid; grid-template-columns: 1.4fr .8fr 1fr; column-gap: 80px; padding: 60px 0 50px; }
+.brand-column, .links-column, .contact-column { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; }
+.footer-brand { font-size: clamp(2.8rem, 4vw, 4rem); line-height: .85; }
+.footer-statement { max-width: 330px; margin: 28px 0 30px; color: #aaa69f; font-size: 15px; line-height: 1.5; }
+.footer-statement strong { display: block; margin-bottom: 12px; color: var(--ivory); font: 10px "Courier New", monospace; letter-spacing: .1em; }
+.footer-cta { display: inline-flex; align-items: center; gap: 8px; width: fit-content; border-bottom: 1px solid currentColor; padding-bottom: 9px; color: var(--ivory); font: 10px "Courier New", monospace; letter-spacing: .08em; transition: color .25s, transform .25s, border-color .25s; }
+.footer-cta:hover { color: var(--lime); border-color: var(--lime); transform: translate(3px, -2px); }
+.links-column h2, .contact-column h2 { margin: 5px 0 24px; color: #aaa69f; font: 11px "Courier New", monospace; letter-spacing: .13em; }
+.links-column a { margin-bottom: 12px; color: var(--ivory); font-size: 16px; transition: color .25s, transform .25s; }
+.links-column a:hover { color: var(--lime); transform: translateX(4px); }
+.contact-column span { margin-top: 3px; color: #77736c; font: 9px "Courier New", monospace; letter-spacing: .1em; }
+.contact-column a:not(.footer-cta), .contact-column p { margin: 8px 0 20px; color: #c8c4bc; font-size: 16px; line-height: 1.45; }
+.contact-column a:not(.footer-cta) { white-space: nowrap; transition: color .25s; }
+.contact-column a:not(.footer-cta):hover { color: var(--lime); }
+.contact-column .footer-cta { margin-top: 4px; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 50px; padding: 15px 0 18px; border-top: 1px solid #494743; color: #77736c; font: 9px "Courier New", monospace; letter-spacing: .1em; }
+.footer-bottom a { color: #77736c; transition: color .25s, transform .25s; }
+.footer-bottom a:hover { color: var(--lime); transform: translateY(-2px); }
+@media (max-width: 800px) {
+	.footer-inner { width: calc(100% - 40px); }
+	.footer-columns { grid-template-columns: 1fr; gap: 52px; padding: 48px 0 45px; }
+	.footer-statement { margin-top: 30px; }
+	.links-column h2, .contact-column h2 { margin-bottom: 24px; }
+	.links-column a { margin-bottom: 16px; font-size: 16px; }
+	.contact-column a:not(.footer-cta), .contact-column p { font-size: 16px; }
+	.contact-column a:not(.footer-cta) { white-space: normal; overflow-wrap: anywhere; }
+	.footer-bottom { align-items: flex-start; flex-direction: column; gap: 18px; line-height: 1.5; }
+}
+@media (min-width: 801px) and (max-width: 1100px) {
+	.footer-inner { width: calc(100% - 80px); }
+	.footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 56px; row-gap: 48px; }
+	.contact-column { grid-column: 2; }
+}
