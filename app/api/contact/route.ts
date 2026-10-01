@@ -1,4 +1,5 @@
 const recipient = "deepika.shantappa@gmail.com";
+const web3FormsAccessKey = "b8f24e7a-bee3-4134-a08e-4a6765b79ac5";
 
 export async function POST(request: Request) {
   try {
@@ -13,36 +14,25 @@ export async function POST(request: Request) {
       return Response.json({ error: "Please complete your name, email, and project details." }, { status: 400 });
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      return Response.json({ error: "Email service is not configured yet." }, { status: 500 });
-    }
-
-    const response = await fetch("https://api.resend.com/emails", {
+    const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        from: process.env.RESEND_FROM_EMAIL || "Portfolio <onboarding@resend.dev>",
-        to: [process.env.CONTACT_EMAIL || recipient],
-        reply_to: email,
+        access_key: web3FormsAccessKey,
         subject: `Portfolio enquiry from ${name}`,
-        text: [
-          `Name: ${name}`,
-          `Email: ${email}`,
-          `Company / Organisation: ${organization || "Not provided"}`,
-          `Project type: ${projectType || "Not provided"}`,
-          "",
-          "Project details:",
-          message,
-        ].join("\n"),
+        from_name: "Deepika Portfolio",
+        to: process.env.CONTACT_EMAIL || recipient,
+        name,
+        email,
+        organization,
+        projectType,
+        message,
       }),
     });
+    const result = await response.json().catch(() => ({})) as { message?: string; success?: boolean };
 
-    if (!response.ok) {
-      return Response.json({ error: "The message could not be sent. Please try again." }, { status: 502 });
+    if (!response.ok || result.success === false) {
+      return Response.json({ error: result.message || "The message could not be sent. Please try again." }, { status: 502 });
     }
 
     return Response.json({ ok: true });

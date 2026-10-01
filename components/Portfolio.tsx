@@ -62,18 +62,20 @@ export default function Portfolio() {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
+    formData.append("access_key", "b8f24e7a-bee3-4134-a08e-4a6765b79ac5");
+    formData.append("subject", "New portfolio enquiry");
+    formData.append("from_name", "Deepika Portfolio");
     setContactStatus("sending");
     setContactError("");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(formData.entries())),
+        body: formData,
       });
-      const result = await response.json().catch(() => ({}));
+      const result = await response.json().catch(() => ({})) as { success?: boolean; message?: string; body?: { message?: string } };
 
-      if (!response.ok) throw new Error(result.error || "The message could not be sent. Please try again.");
+      if (!response.ok || result.success !== true) throw new Error(result.message || result.body?.message || "The message could not be sent. Please try again.");
       setContactStatus("sent");
       form.reset();
     } catch (error) {
