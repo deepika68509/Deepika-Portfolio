@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import { siGithub, siGmail, siInstagram, siLeetcode } from "simple-icons";
+import { siGithub, siGmail, siLeetcode } from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
 import type { CSSProperties } from "react";
 
@@ -9,7 +9,6 @@ const links = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/deepika-s-7494a7258/", mark: "in", tone: "blue" },
   { label: "GitHub", href: "https://github.com/deepika68509/", icon: siGithub, tone: "ink" },
   { label: "LeetCode", href: "https://leetcode.com/u/Deepika68509/", icon: siLeetcode, tone: "lime" },
-  { label: "Instagram", href: "https://www.instagram.com/_deepika__s___?stkn=MWp2OWh3cnp3YW1z", icon: siInstagram, tone: "blue" },
   { label: "Gmail", href: "mailto:deepika.shantappa@gmail.com", icon: siGmail, tone: "lime" },
 ];
 

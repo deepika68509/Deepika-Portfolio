@@ -110,7 +110,7 @@ button { color: inherit; font: inherit; }
 	.footer-brand { font-size: 34px; }
 	.footer-cta { font-size: 9px; }
 }
-.connect-grid { grid-template-columns: repeat(5, 1fr); }
+.connect-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
 /* Keep the final connection/footer layout readable after the desktop grid rule. */
 @media (max-width: 800px) {
