@@ -17,7 +17,7 @@ export const webProjects: WebProject[] = [
     category: "CORPORATE GIFTING EXPERIENCE",
     stack: "REPLO · SHOPIFY · FIGMA",
     description: "A dedicated gifting experience for Opopop, designed around bulk orders, customizable gifts, corporate occasions and a simple path from discovery to request.",
-    image: "/assets/opopop.com_pages_gifting-page.png",
+    image: "/assets/opopop.com_pages_gifting-page.webp",
     demo: "https://opopop.com/pages/gifting-page",
   },
   {
@@ -27,7 +27,7 @@ export const webProjects: WebProject[] = [
     category: "BEAUTY & HAIRCARE E-COMMERCE",
     stack: "REPLO · SHOPIFY · PRODUCT PAGE",
     description: "A detailed product experience for Avani Hair Growth Oil, balancing ingredient storytelling, product benefits, subscription options and a focused purchase journey.",
-    image: "/assets/hairveda.co.uk_products_avani-hair-growth-oil-50ml_variant=51100174418261.png",
+    image: "/assets/hairveda.co.uk_products_avani-hair-growth-oil-50ml_variant=51100174418261.webp",
     demo: "https://hairveda.co.uk/products/avani-hair-growth-oil-50ml",
   },
   {
@@ -37,7 +37,7 @@ export const webProjects: WebProject[] = [
     category: "ENERGY & GAMING E-COMMERCE",
     stack: "REPLO · SHOPIFY · PRODUCT EXPERIENCE",
     description: "A product-focused experience for G FUEL’s Starter Kit, bringing together subscription options, product benefits, flavor discovery and a free shaker offer.",
-    image: "/assets/gfuel.com_pages_subscription-free-shaker-v4.png",
+    image: "/assets/gfuel.com_pages_subscription-free-shaker-v4.webp",
     demo: "https://gfuel.com/pages/subscription-free-shaker-v4",
   },
   {
@@ -47,7 +47,7 @@ export const webProjects: WebProject[] = [
     category: "CULINARY & COOKWARE BRAND",
     stack: "REPLO · SHOPIFY · BRAND STORYTELLING",
     description: "A brand-led experience built around Thomas Keller and Hestan cookware, combining chef storytelling, product discovery, recipes and featured collections.",
-    image: "/assets/hestanculinary.com_pages_thomas-keller-hestan-culinary-brand-ambassador.png",
+    image: "/assets/hestanculinary.com_pages_thomas-keller-hestan-culinary-brand-ambassador.webp",
     demo: "https://hestanculinary.com/pages/thomas-keller-hestan-culinary-brand-ambassador",
   },
   {
@@ -57,7 +57,7 @@ export const webProjects: WebProject[] = [
     category: "FUNCTIONAL FOOD E-COMMERCE",
     stack: "REPLO · SHOPIFY · E-COMMERCE",
     description: "A playful e-commerce experience for probiotic chocolate, combining product discovery, everyday use cases, education and social proof.",
-    image: "/assets/dirtygut.com_pages_home-page.png",
+    image: "/assets/dirtygut.com_pages_home-page.webp",
     demo: "https://dirtygut.com/pages/home-page",
   },
   {
@@ -67,7 +67,7 @@ export const webProjects: WebProject[] = [
     category: "JEWELRY & GIFTING E-COMMERCE",
     stack: "REPLO · SHOPIFY · STORYTELLING",
     description: "A long-form product story for TANAOR’s Nano-Bible Necklace, combining emotional gifting, product education, craftsmanship and social proof into a focused buying journey.",
-    image: "/assets/tanaorjewelry.com_pages_lpt4.png",
+    image: "/assets/tanaorjewelry.com_pages_lpt4.webp",
     demo: "https://tanaorjewelry.com/pages/lpt4",
   },
   {
@@ -77,7 +77,7 @@ export const webProjects: WebProject[] = [
     category: "CHOCOLATE E-COMMERCE STOREFRONT",
     stack: "REPLO · SHOPIFY · FIGMA",
     description: "A playful e-commerce experience built for a handcrafted chocolate brand, balancing bold product storytelling with a smooth, gift-focused shopping journey.",
-    image: "/assets/zacs-sweet-shop.myshopify.com_pages_home.png",
+    image: "/assets/zacs-sweet-shop.myshopify.com_pages_home.webp",
     demo: "https://zacs-sweet-shop.myshopify.com/pages/home",
   },
   {
@@ -87,7 +87,7 @@ export const webProjects: WebProject[] = [
     category: "WOMEN'S HEALTH & WELLNESS",
     stack: "REPLO · SHOPIFY · LONG-FORM LANDING PAGE",
     description: "A long-form wellness experience focused on Lichen Sclerosus relief, combining education, product solutions, testimonials, FAQs and subscription journeys.",
-    image: "/assets/www.neueve.com_pages_lichen-sclerosus-solution.png",
+    image: "/assets/www.neueve.com_pages_lichen-sclerosus-solution.webp",
     demo: "https://www.neueve.com/pages/lichen-sclerosus-solution",
   },
   {
@@ -97,7 +97,7 @@ export const webProjects: WebProject[] = [
     category: "BRAND STORYTELLING & E-COMMERCE",
     stack: "REPLO · SHOPIFY · FIGMA",
     description: "An editorial brand experience introducing a cleaner alternative to traditional surf wax through storytelling, product education and a launch-focused journey.",
-    image: "/assets/www.surfwaxd.com_pages_the-first-wave.png",
+    image: "/assets/www.surfwaxd.com_pages_the-first-wave.webp",
     demo: "https://www.surfwaxd.com/pages/the-first-wave",
   },
   {
@@ -107,7 +107,7 @@ export const webProjects: WebProject[] = [
     category: "PET WELLNESS E-COMMERCE",
     stack: "REPLO · SHOPIFY · PRODUCT EXPERIENCE",
     description: "A conversion-focused product experience for a feline wellness brand, combining product education, benefits, subscriptions and social proof into a clear shopping journey.",
-    image: "/assets/merlinspets.com_products_salmonpowder_view=replo.93623e5e-2537-46ca-b644-4deffb1f7a44.png",
+    image: "/assets/merlinspets.com_products_salmonpowder_view=replo.93623e5e-2537-46ca-b644-4deffb1f7a44.webp",
     demo: "https://merlinspets.com/products/salmonpowder?view=replo.93623e5e-2537-46ca-b644-4deffb1f7a44",
   },
   {
@@ -117,7 +117,7 @@ export const webProjects: WebProject[] = [
     category: "HEALTH & WELLNESS E-COMMERCE",
     stack: "REPLO · SHOPIFY · FIGMA",
     description: "A content-led product experience for VitaCup’s Slim Protein Coffee, combining product education, fitness-focused storytelling, recipes and social proof.",
-    image: "/assets/www.vitacup.com_pages_5-reasons-why-slim-protein-coffee.png",
+    image: "/assets/www.vitacup.com_pages_5-reasons-why-slim-protein-coffee.webp",
     demo: "https://www.vitacup.com/pages/5-reasons-why-slim-protein-coffee",
   },
   {
@@ -127,7 +127,7 @@ export const webProjects: WebProject[] = [
     category: "FOOD & BEVERAGE E-COMMERCE",
     stack: "REPLO · SHOPIFY · CONVERSION UX",
     description: "A high-energy popcorn shopping experience built around flavor discovery, product education, social proof and a customizable bundle-building journey.",
-    image: "/assets/opopop.com_pages_og-fb-7b.png",
+    image: "/assets/opopop.com_pages_og-fb-7b.webp",
     demo: "https://opopop.com/pages/og-fb-7b",
   },
   {
@@ -137,7 +137,7 @@ export const webProjects: WebProject[] = [
     category: "FOOD & BEVERAGE BRAND",
     stack: "REPLO · SHOPIFY · BRAND EXPERIENCE",
     description: "A bold brand experience for Djablo Sauce, introducing its Filipino roots, inter-generational story and range of hot sauces through an expressive storefront.",
-    image: "/assets/djablosauce.com_pages_homepage.png",
+    image: "/assets/djablosauce.com_pages_homepage.webp",
     demo: "https://djablosauce.com/pages/homepage",
   },
 ];
